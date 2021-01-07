@@ -9,8 +9,8 @@ func Runserver(port string){
 	router := gin.Default()
 	router.Use(CORSMiddleware())
 
-	router.POST("/api/converttocsv",CreateHandler())
-	router.GET("/api/download",DownloadAttachmentHandler())
+	router.POST("/api/converttocsv/:filename",CreateHandler())
+	router.GET("/api/download/:filename",DownloadAttachmentHandler())
 
 
 	router.Run(port)
