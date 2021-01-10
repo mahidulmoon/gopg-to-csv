@@ -1,0 +1,10 @@
+api:
+
+    #to_generate_csv
+    POST -> http://127.0.0.1:9004/api/filename
+    BODY: application/json -> {
+                                  "query" : "select * from news_letters"
+                              }
+
+    #to_download the file
+    GET -> http://127.0.0.1:9004/api/download/filename
